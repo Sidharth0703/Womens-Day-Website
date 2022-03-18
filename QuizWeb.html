@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+                background-image: url('https://t4.ftcdn.net/jpg/03/45/88/07/360_F_345880772_zIT2mkdCzTthplO7xqaGGrMspN0jw0ll.jpg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        #one, #Two,#Three,#Four,#Five{
+            color:white;
+            border:5px solid white;
+            width:400px;
+            height:120px;
+            margin-top:200px;
+            margin-left: 40%;
+            padding:25px;
+            box-shadow: 10px 10px 10px whitesmoke;
+            background-color: rgb(5, 133, 184);
+        }
+        #done{
+            border:5px solid green;
+            border-radius:650px;
+            width:100px;
+            height:100px;
+            margin-top:200px;
+            margin-left: 500px;
+            padding:25px;
+        }
+        #Two,#Three,#Four,#Five{
+            display: none;
+        }
+        label{
+                font-weight: 700;
+                font-size:18px;
+            }
+            button{
+                width:460px;
+                color:white;
+                background-color: rgb(0, 119, 255);
+                margin-left:-29px;
+                height:30px;
+            }
+            p{
+                text-align: center;
+                color:green;
+                margin-top:20px;
+                font-size: 60px;
+                font-weight: 700;
+            }
+            .SSS{
+                border: 4px solid yellowgreen;
+                color: slateblue;
+                background-color: aqua;
+            }
+        
+
+
+    </style>
+</head>
+
+
+<body class="">
+    <a href="index.html"><h1 class="SSS">(--Back To Home</h1></a>
+    <div id="one" style="display: none;">
+        <form>
+            <label><u>Question 1 When Is Womens Day?</u></label><br><br>
+            
+            <input type="radio" name="ok" id="opt1">28th,February<br>
+            <input type="radio" name="ok" id="opt2">28th,January<br>
+            <input type="radio" name="ok" id="opt3">8th March<br>
+        
+        </form>
+        <button onclick="nextone()">Check Answer</button>
+    </div>
+    <div id="Two" style="display: block;">
+        <form>
+            <label><u>Question 2 Who created Womens Day?</u></label><br><br>
+            
+            <input type="radio" name="ok" id="opt4">Einstein<br>
+            <input type="radio" name="ok" id="opt5">Galileo<br>
+            <input type="radio" name="ok" id="opt6">Theresa Malkial<br>
+        
+        </form>
+        <button onclick="nextwo()">Check Answer</button>
+    </div>
+    <div id="Three">
+        <form>
+            <label><u>Question 3 When Was Theresa Malkial Born?</u></label><br><br>
+            
+            <input type="radio" name="ok" id="opt7">May 1st,1884<br>
+            <input type="radio" name="ok" id="opt8">January 28, 1478<br>
+            <input type="radio" name="ok" id="opt9">March 7, 1898<br>
+        
+        </form>
+        <button onclick="nexthree()">Check Answer</button>
+    </div>
+    <div id="Five">
+        <form>
+            <label><u>Question 4 Do You Like Womens Day?</u></label><br><br>
+            
+            <input type="radio" name="ok" id="opt10">Ok<br>
+            <input type="radio" name="ok" id="opt11">No<br>
+            <input type="radio" name="ok" id="opt12">I Dont Know<br>
+        
+        </form>
+        <button onclick="nextfour()">Check Answer</button>
+    </div>
+    <div id="Four">
+        <h1 id="res"></h1>
+    </div>
+    <script type="text/javascript">
+        var Score=0;
+        function nextone(){
+            if(document.getElementById("opt3").checked==true){
+                Score=Score+1
+                swal("Congratulations","Your Answer Is Correct, Score is"+Score,"success");
+            }
+            else{
+                swal("Oops","The Correct Answer Is 8th March","error");
+            }
+            document.getElementById("one").style.display="none";
+            document.getElementById("Two").style.display="block";
+        }
+        function nextwo(){
+            if(document.getElementById("opt6").checked==true){
+                Score=Score+1
+                swal("Congratulations","Your Answer Is Correct,Score is"+Score,"success");
+            }
+            else{
+                swal("Oops","The Correct Answer Is Galileo","error");
+            }
+            document.getElementById("Two").style.display="none";
+            document.getElementById("Three").style.display="block"
+        }
+        function nexthree(){
+            if(document.getElementById("opt7").checked==true){
+                Score=Score+1
+                swal("Congratulations","Your Answer Is Correct,Score is"+Score,"success");
+            }
+            else{
+                swal("Oops","The Correct Answer Is May 1st,1884","error");}
+            document.getElementById("Three").style.display="none";
+            document.getElementById("Five").style.display="block";
+            }
+            function nextfour(){
+            if(document.getElementById("opt10").checked==true){
+                Score=Score+1
+                swal("Ok","I Hope You Like Womens Day!" +Score ,"success");
+            }
+            document.getElementById("Four").innerHTML="The Score is "+Score+"/4";
+            document.getElementById("Four").style.fontSize="40px";
+            document.getElementById("Five").style.display="none";
+            document.getElementById("Four").style.display="block";
+        }
+            
+    </script>
+
+<div class="sweet-overlay" tabindex="-1" style="opacity: -0.06; display: none;"></div><div class="sweet-alert hideSweetAlert" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: none; margin-top: -169px; opacity: -0.08;"><div class="sa-icon sa-error" style="display: block;">
+  <span class="sa-x-mark">
+    <span class="sa-line sa-left"></span>
+    <span class="sa-line sa-right"></span>
+  </span>
+</div><div class="sa-icon sa-warning" style="display: none;">
+  <span class="sa-body"></span>
+  <span class="sa-dot"></span>
+</div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+  <span class="sa-line sa-tip"></span>
+  <span class="sa-line sa-long"></span>
+
+  <div class="sa-placeholder"></div>
+  <div class="sa-fix"></div>
+</div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Oops</h2>
+<p style="display: block;">The Correct Answer Is 28th February</p>
+<fieldset>
+  <input type="text" tabindex="3" placeholder="">
+  <div class="sa-input-error"></div>
+</fieldset><div class="sa-error-container">
+  <div class="icon">!</div>
+  <p>Not valid!</p>
+</div><div class="sa-button-container">
+  <button class="cancel" tabindex="2" style="display: none;">Cancel</button>
+  <div class="sa-confirm-button-container">
+    <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">OK</button><div class="la-ball-fall">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div></div></body>
+</html>
